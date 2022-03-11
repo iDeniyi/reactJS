@@ -1,26 +1,25 @@
 import React from "react";
-import lifestyle1 from "../images/lifestyle1.jpg"
 import star from "../images/star.png"
 
 
-export default function Card() {
+export default function Card(props) {
     return (
         <div>
 
             <img 
-                src={lifestyle1}
+                src={props.img}
                 className="card--image"
             />
 
 
             <div className="card--stats">
                 <img src={star} className="card--star"/>
-                <span>5.0</span>
-                <span className="gray">(6) •</span>
-                <span className="gray">Mountain Top</span>
+                <span>{props.rating}</span>
+                <span className="gray">({props.reviewCount}) •</span>
+                <span className="gray">{props.country}</span>
             </div>
-            <p>Climb that mountain. reach the top!</p>
-            <p><span className="bold"> From $136 </span> / person</p>
+            <p>{props.title}!</p>
+            <p><span className="bold"> From ${props.price} </span> / person</p>
 
         </div>
     )

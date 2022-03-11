@@ -5,18 +5,19 @@ import message_icon from "../images/message_icon.png"
 
 
 
-export default function Contact() {
+export default function Contact(props) {
+    console.log(props)
     return (
-        <div className="contact-card">
-            <img src={dog_1}/>
-            <h3>Mr. Whiskerson</h3>
+        <div className={"contact-card"}>
+            <img src={props.img}/>
+            <h3>{props.name}</h3>
             <div className="info-group">
                 <img src={phone_icon}/>
-                <p>(212) 555-1234</p>
+                <p>{props.phone}</p>
             </div>
             <div className="info-group">
                 <img src={message_icon}/>
-                <p>mr.whiskaz@catnap.meow</p>
+                <p>{props.email}</p>
             </div>
         </div>
     )
