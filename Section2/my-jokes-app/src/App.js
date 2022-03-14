@@ -1,10 +1,24 @@
 import React from "react"
 import Joke from "./components/Joke"
+import jokesData from "./components/jokesData"
 
 export default function App() {
+    const jokeElemnent = jokesData.map(joke => {
+        return <Joke setup={joke.setup} punchline={joke.punchline} />    
+    })
+
     return (
         <div>
-            <Joke 
+            {jokeElemnent}
+        </div>
+    )
+}
+
+
+
+
+
+            {/* <Joke 
                 punchline="It’s hard to explain puns to kleptomaniacs because they always take things literally."
                 isPun={true}
                 upvotes={10}
@@ -35,7 +49,4 @@ export default function App() {
                 setup="What's the best thing about Switzerland?" 
                 punchline="I don't know, but the flag is a big plus!" 
                 isPun={false}
-            />
-        </div>
-    )
-}
+/> */}
